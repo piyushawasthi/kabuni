@@ -11,11 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140711225800) do
+ActiveRecord::Schema.define(version: 20161102052544) do
 
   create_table "links", force: true do |t|
     t.integer  "user_id"
-    t.string   "slug"
+    t.string   "shorten"
     t.string   "target_url"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -44,6 +44,9 @@ ActiveRecord::Schema.define(version: 20140711225800) do
     t.string   "ip_address"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "city"
+    t.string   "state"
+    t.string   "country"
   end
 
 end

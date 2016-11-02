@@ -13,8 +13,8 @@
 <% end %>
 
 <%= form_tag "/links/#{@link.id}", :method => :patch do %>
-  <%= label_tag :slug %>
-  <%= text_field_tag :slug, @link.slug %>
+  <%= label_tag :shorten %>
+  <%= text_field_tag :shorten, @link.shorten %>
 
   <%= label_tag :target_url %>
   <%= text_field_tag :target_url, @link.target_url %>

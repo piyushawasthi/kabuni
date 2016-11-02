@@ -9,25 +9,31 @@
 # And be sure to use new-style password hashing:
 #   http://dev.mysql.com/doc/refman/5.0/en/old-client.html
 #
-default: &default
+mysql: &mysql
   adapter: mysql2
   encoding: utf8
   pool: 5
   username: root
   password:
-  socket: /tmp/mysql.sock
+  socket: /var/run/mysqld/mysqld.sock
+
+# Comment the the mysql line and uncomment the postgres line
+# if you want to use postgres
+default: &default
+  # Choose one of the following
+  <<: *mysql
+  #<<: *postgres
+
+  # Should match environment.sidekiq.concurrency
+  #pool: 25
+
+##################################################
+#### CONFIGURE ABOVE #############################
+##################################################
 
 development:
   <<: *default
-  database: url-shortener-app_development
-
-# Warning: The database defined as "test" will be erased and
-# re-generated from your development database when you run "rake".
-# Do not set this db to the same as development or production.
-test:
-  <<: *default
-  database: url-shortener-app_test
-
+  database: kabuni_development
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
 # ever seen by anyone, they now have access to your database.

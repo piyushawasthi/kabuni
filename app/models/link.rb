@@ -2,7 +2,7 @@ class Link < ActiveRecord::Base
   has_many :visits
   belongs_to :user
 
-  validates :slug, presence: true
+  validates :shorten, presence: true
   validates :target_url, presence: true
 
   def standardize_target_url!

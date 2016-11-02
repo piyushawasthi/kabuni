@@ -15,7 +15,7 @@ Rails.application.routes.draw do
 
   resources :visits
 
-  get '/:slug' => 'visits#create'
+  get '/:shorten' => 'visits#create'
 
 
   # The priority is based upon order of creation: first created -> highest priority.

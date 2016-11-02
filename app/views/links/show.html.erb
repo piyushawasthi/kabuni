@@ -1,2 +1,3 @@
-<h1>Link Stats for <%= @link.slug%></h1>
+<h1>URL Stats for <%= @link.shorten%></h1>
 <h3>Visits: <%= @link.visit_count %></h3>
+<h3>IP: <%= @link.visits.last.ip_address %></h3>

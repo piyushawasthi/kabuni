@@ -32,4 +32,4 @@ cancel_user_registration GET    /users/cancel(.:format)        devise/registrati
                          PATCH  /visits/:id(.:format)          visits#update
                          PUT    /visits/:id(.:format)          visits#update
                          DELETE /visits/:id(.:format)          visits#destroy
-                         GET    /:slug(.:format)               visits#create
+                         GET    /:shorten(.:format)            visits#create
