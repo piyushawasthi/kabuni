@@ -2,7 +2,6 @@ class Link < ActiveRecord::Base
   has_many :visits
   belongs_to :user
 
-  validates :shorten, presence: true
   validates :target_url, presence: true
 
   def standardize_target_url!
@@ -13,4 +12,9 @@ class Link < ActiveRecord::Base
   def visit_count
     self.visits.count
   end
+
+  def generate_shorten
+    SlugGenerator.new(self).process!
+  end
+
 end

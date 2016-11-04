@@ -20,9 +20,12 @@ gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
 gem 'bootstrap-sass'
+gem "figaro"
+
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0'
+  gem 'pry', '~> 0.10.3'
 end
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby

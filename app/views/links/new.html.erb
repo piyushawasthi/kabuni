@@ -13,11 +13,9 @@
 <% end %>
 
 <%= form_tag "/links" do %>
-  <%= label_tag :shorten %>
-  <%= text_field_tag :shorten, @link.shorten %>
-
+  
   <%= label_tag :target_url %>
   <%= text_field_tag :target_url, @link.target_url %>
 
-  <%= submit_tag "Create Link" %>
+  <%= submit_tag "Generate Shorten URL" %>
 <% end %>
